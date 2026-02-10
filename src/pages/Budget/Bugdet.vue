@@ -1,5 +1,18 @@
+<script>
+import { addIcons, OhVueIcon } from "oh-vue-icons";
+import { BiPlus } from "oh-vue-icons/icons";
+
+addIcons(BiPlus);
+
+export default {
+  components: {
+    "v-icon": OhVueIcon,
+  },
+};
+</script>
+
 <script setup>
-import { computed, onMounted } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { setToken } from "../../api/api";
 import { useUserStore } from "../../stores/user";
 
@@ -9,6 +22,9 @@ import { useSubscriptions } from "../../composable/Subscriptions";
 import Gauge from "../../components/Gauge/Gauge.vue";
 import SetBudget from "../../components/SetBudget/SetBudget.vue";
 import TopCat from "../../components/TopCategories/TopCat.vue";
+import Modal from "../../components/Modal/Modal.vue";
+
+const showModal = ref(false);
 
 const userStore = useUserStore();
 
@@ -70,12 +86,18 @@ onMounted(() => {
 </script>
 
 <template>
+  <Modal :show="showModal" @close="showModal = false">
+    <SetBudget />
+  </Modal>
   <div class="budget">
-    <h1>Budget</h1>
+    <div class="header">
+      <h1>Budget</h1>
+      <button @click="showModal = true"><v-icon name="bi-plus" /></button>
+    </div>
 
     <main>
       <div class="box">
-        <h2>Total Monthly Budget</h2>
+        <h2>Total Monthly Budget <br />(General)</h2>
 
         <Gauge
           v-if="totalBudget > 0"
@@ -106,15 +128,6 @@ onMounted(() => {
       <div class="container">
         <div class="boxRight">
           <TopCat />
-        </div>
-
-        <div class="row">
-          <div class="boxR">
-            <h2>Set Budgets</h2>
-            <SetBudget />
-          </div>
-
-          <div class="boxR"></div>
         </div>
       </div>
     </main>

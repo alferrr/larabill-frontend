@@ -92,13 +92,16 @@ onMounted(async () => {
 .top-categories {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5em;
 }
 
 .category-box {
   background: #a7a7a70b;
   padding: 0.75rem;
   border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .bar {

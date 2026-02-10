@@ -11,6 +11,10 @@
     }
   }
 
+  .mobile {
+    display: none;
+  }
+
   nav {
     display: flex;
     flex-direction: column;
@@ -42,5 +46,22 @@
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.079);
     background: rgba(144, 144, 144, 0.094);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sidebar {
+    position: fixed;
+    top: 5rem;
+    .pc {
+      display: none;
+    }
+    .mobile {
+      padding: 12px 5px;
+      display: flex;
+      a {
+        justify-content: center;
+      }
+    }
   }
 }

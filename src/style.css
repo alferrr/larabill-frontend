@@ -124,3 +124,20 @@ a {
   font-family: var(--heading);
   color: white;
 }
+
+@media screen and (max-width: 767px) {
+  .app {
+    header {
+      padding: 12px 3px;
+      h1 {
+        display: none;
+      }
+    }
+    aside {
+      width: 15%;
+    }
+    main {
+      width: 85%;
+    }
+  }
+}

@@ -54,3 +54,55 @@
     }
   }
 }
+
+@media screen and (max-width: 767px) {
+  .subs-table {
+    th {
+      display: none;
+    }
+
+    tbody {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      tr {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+
+        td {
+          border-bottom: none !important;
+          padding: 12px !important;
+        }
+
+        td::before {
+          content: "Service: ";
+          color: rgb(86, 86, 86);
+          margin-right: 1rem;
+        }
+
+        td:nth-child(2)::before {
+          content: "Price: ";
+        }
+        td:nth-child(3)::before {
+          content: "Cycle: ";
+        }
+        td:nth-child(4)::before {
+          content: "Category: ";
+        }
+        td:nth-child(5)::before {
+          content: "Price: ";
+        }
+        td:nth-child(6)::before {
+          content: "Due Date: ";
+        }
+        td:nth-child(7)::before {
+          content: "";
+          display: none;
+        }
+      }
+    }
+  }
+}

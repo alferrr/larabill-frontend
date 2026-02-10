@@ -29,7 +29,7 @@ export default {
     <header>
       <h1>LaraBill</h1>
     </header>
-    <nav>
+    <nav class="pc">
       <router-link to="/dashboard"
         ><v-icon name="md-spacedashboard-round" />Dashboard</router-link
       >
@@ -42,6 +42,20 @@ export default {
       <router-link to="/reports"
         ><v-icon name="bi-bar-chart-fill" />Reports</router-link
       >
+    </nav>
+    <nav class="mobile">
+      <router-link to="/dashboard"
+        ><v-icon name="md-spacedashboard-round"
+      /></router-link>
+
+      <!-- <a href=""><v-icon name="bi-calendar-fill" />Upcoming</a> -->
+      <router-link to="/subscriptions"
+        ><v-icon name="bi-cash-coin"
+      /></router-link>
+      <router-link to="/budget"><v-icon name="io-wallet" /></router-link>
+      <router-link to="/reports"
+        ><v-icon name="bi-bar-chart-fill"
+      /></router-link>
     </nav>
   </div>
 </template>
